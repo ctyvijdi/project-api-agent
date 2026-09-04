@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: dependencies
+Version: 7.7.1
+Summary: Constructor injection designed with OOP in mind.
+Home-page: https://pypi.org/project/dependencies
+License: BSD-2-Clause
+Author: Josiah Kaviani
+Author-email: proofit404@gmail.com
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Project-URL: Changelog, https://proofit404.github.io/dependencies/changelog
+Project-URL: Documentation, https://proofit404.github.io/dependencies
+Project-URL: Issues, https://github.com/proofit404/dependencies/issues
+Project-URL: Repository, https://github.com/proofit404/dependencies
+Project-URL: Twitter, https://twitter.com/proofit404
+Description-Content-Type: text/markdown
+
+Do not use this package. Use https://github.com/hynek/svcs package instead.
+

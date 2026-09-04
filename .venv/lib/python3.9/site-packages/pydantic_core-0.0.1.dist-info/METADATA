@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: pydantic-core
+Version: 0.0.1
+Summary: Placeholder until pydantic-core is released.
+Home-page: https://github.com/samuelcolvin/pydantic-core
+License: MIT
+Author: Samuel Colvin
+Author-email: s@muelcolvin.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Project-URL: Repository, https://github.com/samuelcolvin/pydantic-core
+Description-Content-Type: text/markdown
+
+# pydantic-core
+
+Placeholder until pydantic-core is released.
+

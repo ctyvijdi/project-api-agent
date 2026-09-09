@@ -43,7 +43,6 @@ def verify_with_model(chad, user_request, code, code_output):
     return False
 
 def check(code):
-    """Проверяет код и возвращает результат"""
     with open("project_info.py", 'w', encoding='utf-8') as f:
         f.write(str(code))  # Преобразуем в строку на всякий случай
     
@@ -122,7 +121,6 @@ class gigachat:
         return prompt
 
 def extract_code_from_response(resp):
-    """Извлекает код из ответа модели"""
     if not resp or not resp.choices:
         return None
     
@@ -168,22 +166,22 @@ def main():
         code_success = False
 
         for attempt in range(3):
-            print(f'\n🔄 Попытка {attempt + 1} из 3...')
+            print(f'\n Попытка {attempt + 1} из 3...')
             
             resp = chad.get_response(MESSAGES)
             
             if not resp or not resp.choices:
-                print("❌ Ошибка получения ответа")
+                print(" Ошибка получения ответа")
                 break
 
             if hasattr(resp.choices[0].message, 'function_call') and resp.choices[0].message.function_call:
-                print('🔧 Произошел вызов функции!')
+                print(' Произошел вызов функции!')
 
                 code = extract_code_from_response(resp)
-                print(f'💻 Код: {str(code)[:100]}...')
+                print(f' Код: {str(code)[:100]}...')
                 
                 if not code:
-                    print('❌ Код пустой!')
+                    print(' Код пустой!')
                     MESSAGES.append({
                         "role": "user",
                         "content": "Ты вызвал функцию vibe_code, но не передал код. Передай Python код в параметре 'code'."
@@ -193,10 +191,10 @@ def main():
                 check_result = check(code)
                 
                 if check_result["success"]:
-                    print(f'✅ Код выполнен без ошибок')
-                    print(f'📋 Вывод: {check_result["output"]}')
+                    print(f' Код выполнен без ошибок')
+                    print(f' Вывод: {check_result["output"]}')
                     if verify_with_model(chad, user_request, code, check_result["output"]):
-                        print('✅ Код делает то, что нужно!')
+                        print(' Код делает то, что нужно!')
                         code_success = True
                         assistant_message = {
                             "role": "assistant",
@@ -216,13 +214,13 @@ def main():
                         final_response = chad.get_response(MESSAGES)
                         break
                     else:
-                        print('❌ Код работает, но делает не то')
+                        print(' Код работает, но делает не то')
                         MESSAGES.append({
                             "role": "user",
                             "content": f"Код вывел: {check_result['output']}, но я просил: {user_request}. Исправь код."
                         })
                 else:
-                    print(f'❌ Ошибка: {check_result["error"]}')
+                    print(f' Ошибка: {check_result["error"]}')
                     MESSAGES.append({
                         "role": "user",
                         "content": f"Код вызвал ошибку: {check_result['error']}. Исправь код и вызови функцию vibe_code снова."
@@ -239,6 +237,6 @@ def main():
             print(f'\n\nВам ответил: {final_response.choices[0].message.content}')
             print(f'Потрачено: {final_response.usage.total_tokens}')
         else:
-            print('❌ Не удалось получить ответ')
+            print(' Не удалось получить ответ')
 if __name__ == '__main__':
     main()

@@ -38,7 +38,7 @@ def verify_with_model(chad, user_request, code, code_output):
 
     if verification_response and verification_response.choices:
         answer = verification_response.choices[0].message.content.lower().strip()
-        print(f'🔍 Проверка: {answer}')
+        print(f' Проверка: {answer}')
         return answer.startswith('true') or answer.startswith('да')
     return False
 
